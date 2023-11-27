@@ -1,0 +1,43 @@
+<div class="max-w-8xl mx-auto sm:px-6 lg:px-8 mt-16">
+    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-8">
+        <table class="w-full border-collapse border border-gray-300">
+            <thead>
+                <tr class="bg-purple-400 text-white">
+                    <th class="p-3 border border-gray-300 w-1/24">id_vuelo</th>
+                    <th class="p-3 border border-gray-300 w-2/12">fecha_partida</th>
+                    <th class="p-3 border border-gray-300 w-2/12">fecha_llegada</th>
+                    <th class="p-3 border border-gray-300 w-1/12">ciudad_origen</th>
+                    <th class="p-3 border border-gray-300 w-1/12">ciudad_destino</th>
+                    <th class="p-3 border border-gray-300 w-1/12">aeropuerto_origen</th>
+                    <th class="p-3 border border-gray-300 w-1/12">aeropuerto_destino</th>
+                    <th class="p-3 border border-gray-300 w-1/12">pais_origen</th>
+                    <th class="p-3 border border-gray-300 w-1/12">pais_destino</th>
+                    <th class="p-3 border border-gray-300 w-1/12">accion</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each acciones}}
+                    <tr class="border border-gray-300">
+                        <td class="p-2 border border-gray-300">{{id_vuelo}}</td>
+                        <td class="p-2 border border-gray-300">{{fecha_partida}}</td>
+                        <td class="p-2 border border-gray-300">{{fecha_llegada}}</td>
+                        <td class="p-2 border border-gray-300">{{ciudad_origen}}</td>
+                        <td class="p-2 border border-gray-300">{{ciudad_destino}}</td>
+                        <td class="p-2 border border-gray-300">{{aeropuerto_origen}}</td>
+                        <td class="p-2 border border-gray-300">{{aeropuerto_destino}}</td>
+                        <td class="p-2 border border-gray-300">{{pais_origen}}</td>
+                        <td class="p-2 border border-gray-300">{{pais_destino}}</td>
+                        <td class="p-4 flex">
+                            <form action="/misreservas/delete" method="POST">
+                                <input type="hidden" value="{{id_vuelo}}" name="id_vuelo">
+                                    <button class="bg-red-500 text-white px-3 py-1 rounded-sm" type="submit">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                            </form>
+                        </td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>

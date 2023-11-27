@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Nodejs MySql</title>
+
+    <!-- Tailwind CSS Link -->
+    <link rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.1/tailwind.min.css">
+
+    <!-- Fontawesome Link -->
+    <link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" rel="stylesheet">
+</head>
+</head>
+<body class="bg-gray-200">
+    <nav class="flex py-5 bg-purple-400 text-white px-24">
+    <div class="w-1/2 px-12 mr-auto">
+        <a href="/"class="text-2xl font-bold hover:underline">TEAM CASTORES</a>
+    </div>
+
+
+        <div class="w-1/2 px-16 ml-auto flex justify-end pt-1">
+            {{#if name}}
+                <!-- Mostrar estos botones solo si el usuario ha iniciado sesión -->
+                <ul class="flex space-x-4">
+                    <li class="nav-item">
+                        <a href="/midata" class="nav-link font-semibold hover:bg-purple-600 py-3 px-4 rounded-md">Mis Datos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/misreservas" class="nav-link font-semibold hover:bg-purple-600 py-3 px-4 rounded-md">Mis Reservas</a>
+                    </li>
+                </ul>
+            {{/if}}
+
+            <ul class="flex space-x-4">
+                {{#if name}}
+                    <li class="nav-item">
+                        <p class="font-semibold">{{name}}</p>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/logout" class="nav-link font-semibold bg-red-400 text-white hover:bg-red-600 py-3 px-4 rounded-md">Salir</a>
+                    </li>
+                {{else}}
+                    <li class="nav-item">
+                        <a href="/login" class="nav-link font-semibold border-2 border-white hover:bg-white hover:text-purple-600 py-3 px-4 rounded-md">Acceder</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/register" class="nav-link font-semibold border-2 border-white hover:bg-white hover:text-purple-600 py-3 px-4 rounded-md">Registrarse</a>
+                    </li>
+                {{/if}}
+            </ul>
+        </div>
+    </nav>
+
+    {{{body}}}
+</body>
+</html>

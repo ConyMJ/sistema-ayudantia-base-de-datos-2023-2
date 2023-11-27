@@ -1,0 +1,15 @@
+<div class="block mx-auto my-12 p-8 bg-white w-1/3 border border-gray-200 rounded-lg shadow-lg">
+    <h1 class="text-center text-2xl font-bold">Mis Datos</h1>
+
+    <form action="/midata" method="POST" class="mt-4">
+        <div class="mb-2">
+            <input type="text" id="name" name="name" value="{{data.name}}" class="border border-gray-200 rounded-md bg-gray-200 w-full text-lg placeholder-gray-400 p-2 focus:bg-white" required placeholder="nombre">
+            <input type="text" id="password" name="password" value="{{data.password}}" class="border border-gray-200 rounded-md bg-gray-200 w-full text-lg placeholder-gray-400 p-2 focus:bg-white" required placeholder="clave">
+            <input type="tel" id="telefono" name="telefono" value="{{data.telefono}}" class="border border-gray-200 rounded-md bg-gray-200 w-full text-lg placeholder-gray-400 p-2 focus:bg-white" required placeholder="telefono">
+            <input type="email" id="email" name="email" value="{{data.email}}" class="border border-gray-200 rounded-md bg-gray-200 w-full text-lg placeholder-gray-400 p-2 focus:bg-white" required placeholder="email">
+        </div>
+        <!-- Agrega otros campos según sea necesario -->
+
+        <button type="submit" class="rounded-md bg-purple-500 w-full text-lg text-white font-semibold p-2 my-3 hover:bg-purple-600 focus:bg-purple-700">Actualizar</button>
+    </form>
+</div>
